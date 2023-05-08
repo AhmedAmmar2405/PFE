@@ -1,3 +1,6 @@
+<?php 
+session_start();
+ ?>
 <!doctype html>
 <html>
 <head>
@@ -29,10 +32,19 @@
           <a class="nav-link" href="../addproduct/index.php" style="background:green;border-radius: 30px 30px 30px 30px;"><i class="fas fa-plus"></i> Vendre produit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../interface/index.php">Logout</a>
+          <a class="nav-link" href="logout.php">Logout</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="signup.html"><i class="fas fa-user-alt"></i> Vendeur Id</a>
+          <a class="nav-link" href="../userinfo.php"  ><i class="fas fa-user-alt"></i> <?php 
+          if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+            echo $_SESSION['nom'].' '.$_SESSION['prenom'];
+          }else{
+            header("location:../signin/index.php");
+          }
+        
+
+
+        ?></a>
         </li>
         
         
@@ -57,16 +69,21 @@
       <div class="list-group">
   <h3 class="font-weight-bold"><center><b>Categories</b></center></h3>
 
-  <a href="#" class="list-group-item list-group-item-action ">categorie 1</a>
-  <a href="#" class="list-group-item list-group-item-action ">categorie 2</a>
-  <a href="#" class="list-group-item list-group-item-action ">categorie 3</a>
-  <a href="#" class="list-group-item list-group-item-action ">categorie 4</a>
-  <a href="#" class="list-group-item list-group-item-action ">categorie 5</a>
-  <a href="#" class="list-group-item list-group-item-action ">categorie 6</a>
-  <a href="#" class="list-group-item list-group-item-action ">categorie 7</a>
-  <a href="#" class="list-group-item list-group-item-action ">categorie 8</a>
+  <?php 
+        
+        include '../db_conn.php';
+        $get_cat="select * from categorie";
+        $run=mysqli_query($conn,$get_cat);
+        while($resultat = mysqli_fetch_array($run))
+        {
+
+          echo '<a href="#" class="list-group-item list-group-item-action ">'.$resultat['nom'].'</a>';
+        }
+
+ ?>
 </div>
     </div>
+
     <div class="col-md-8">
       <div id="carouselExampleFade" class="carousel slide carousel-fade">
   <div class="carousel-inner">
@@ -89,6 +106,17 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<script>
+  $(document).ready(function(){
+    setInterval(function(){
+      $('#carouselExampleFade .carousel-item:first-child').fadeOut(1000)
+         .next('.carousel-item').fadeIn(1000)
+         .end().appendTo('#carouselExampleFade .carousel-inner');
+    }, 5000);
+  });
+</script>
+
 <h2 class="font-weight-bold" style="font-size: 2rem;color: #07001f;"><center>LATESTS</center></h2>
 
 
@@ -125,50 +153,17 @@
    
      <div class="row";>
       <div class="col-sm-3"></div>
-       <div class="col-sm-2">
-        <a href="product.html" class="btn text-light btn-transparant">
-         <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-secondary border-success"><b>CPU i7-9700K</b></div>
-  <div class="card-body text-success">
-    <img src="cpu2.png" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
-  </div>
-  <div class="card-footer bg-secondary border-success"><b>150$</b></div>
-</div>
-       </a></div>
 
+       <div class="row";>
+      <div class="col-sm-3"></div>
+      <?php 
+      include '../latest.php';
 
- <div class="col-sm-2">
-        <a href="" class="btn text-light btn-transparant">
-         <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-secondary border-success"><b>CPU i7-9700K</b></div>
-  <div class="card-body text-success">
-    <img src="cpu2.png" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
-  </div>
-  <div class="card-footer bg-secondary border-success"><b>150$</b></div>
-</div></a>
-       </div>
+       ?>
+       
+     </div>
 
-        <div class="col-sm-2">
-        <a href="" class="btn text-light btn-transparant">
-         <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-secondary border-success"><b>CPU i7-9700K</b></div>
-  <div class="card-body text-success">
-    <img src="cpu2.png" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
-  </div>
-  <div class="card-footer bg-secondary border-success"><b>150$</b></div>
-</div></a>
-       </div>
-
-      <div class="col-sm-2">
-        <a href="" class="btn text-light btn-transparant">
-         <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-secondary border-success"><b>CPU i7-9700K</b></div>
-  <div class="card-body text-success">
-    <img src="cpu2.png" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
-  </div>
-  <div class="card-footer bg-secondary border-success"><b>150$</b></div>
-</div></a>
-       </div>
+       
      </div>
 
 

@@ -10,7 +10,6 @@ font-family: "Poppins", sans-serif;
 body{
 	background: #dfe9f5;
 }
-
 #nav-bar
 {
 	position: sticky;
@@ -154,7 +153,7 @@ body{
   width: 800px;
   padding: 2rem 0 1rem 0;
   margin: 50px auto;
-  
+  background: #fff;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
@@ -163,7 +162,7 @@ form input,
 form select,
 form div 
 {
-  width: 85%;
+  width: 100%;
   outline: none;
   border: none;
   background: #dfe9f5;
@@ -182,15 +181,7 @@ form div
   border: none;
 }
 button{
-  font-size: 1.1rem;
-  margin-top: 1rem;
-  padding: 8px 0;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  width: 85%;
-  background: #bababf;
-  color: #fff;
+
   cursor: pointer;
 }
 button:hover{

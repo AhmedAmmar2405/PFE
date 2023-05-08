@@ -61,10 +61,6 @@
       Not a member? <a href="../signup/index.php">Register Now</a>
     </div>
   </div>
-
-
-
-
 <section>
   <section class="">
 

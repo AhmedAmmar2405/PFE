@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(isset($_SESSION['idUser'])) {
+    header("Location: ../interfaceconnecte/index.php");
+    exit;
+}
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -56,16 +64,17 @@
   <h3 class="font-weight-bold"><center><b>Categories</b></center></h3>
 
   <?php 
-        session_start();
+        
         include '../db_conn.php';
         $get_cat="select * from categorie";
         $run=mysqli_query($conn,$get_cat);
         while($resultat = mysqli_fetch_array($run))
         {
+
           echo '<a href="#" class="list-group-item list-group-item-action ">'.$resultat['nom'].'</a>';
         }
 
-         ?>
+ ?>
 </div>
     </div>
     <div class="col-md-8">
@@ -126,8 +135,9 @@
    
      <div class="row";>
       <div class="col-sm-3"></div>
+      
       <?php 
-      include '../getprod.php';
+      include '../latest.php';
 
        ?>
        

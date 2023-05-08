@@ -1,7 +1,7 @@
 <?php 
 include '../db_conn.php';
 $x=0;
-$getproduct =mysqli_query($conn,"select * from produit") ;
+$getproduct =mysqli_query($conn,"select * from produit order by produit.date_appro DESC limit 8") ;
 $count=mysqli_num_rows($getproduct);
 while ($res=mysqli_fetch_array($getproduct)) {
 	
@@ -22,12 +22,3 @@ while ($res=mysqli_fetch_array($getproduct)) {
 }
 
  ?>
-
-
- 
-        
-         
-  
-  
-    
-  

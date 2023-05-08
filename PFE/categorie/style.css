@@ -10,7 +10,6 @@ font-family: "Poppins", sans-serif;
 body{
 	background: #dfe9f5;
 }
-
 #nav-bar
 {
 	position: sticky;
@@ -48,11 +47,6 @@ body{
 	float: right;
 	text-align: center;
 	padding: 10;
-
-}
-.col-sm-3{
-  flex-shrink: 0;
-  flex-wrap: wrap;
 }
 
 .list-group h3 {
@@ -154,7 +148,7 @@ body{
   width: 800px;
   padding: 2rem 0 1rem 0;
   margin: 50px auto;
-  
+  background: #fff;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);

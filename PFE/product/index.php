@@ -1,3 +1,8 @@
+<?php 
+session_start();
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,157 +18,70 @@
     <title>Document</title>
 </head>
 <body>
-  <section>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="../interface/index.php"><h4><b>SELL&BUY</b></h4></a>
-          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="margin:0 10px 0 auto;width:60px;">
-            <span class="navbar-toggler-icon"></span>
-            
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                <a class="nav-link"  href="./">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="../addproduct/index.php">Vendre produit</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"  href="../signin/index.php">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="../signup/index.php">Sign up</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
-    </section>
+ <section>
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="./index.php"><h4><b>SELL&BUY</b></h4></a>
+    <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+          <a class="nav-link active"  href="../interface/index.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../addproduct/index.php" style="background:green;border-radius: 30px 30px 30px 30px;"><i class="fas fa-plus"></i> Vendre produit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../interfaceconnecte/logout.php">Logout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../userinfo.php"  ><i class="fas fa-user-alt"></i> <?php 
+          if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])) {
+            echo $_SESSION['nom'].' '.$_SESSION['prenom'];
+          }else{
+            header("location:../signin/index.php");
+          }
+        
+
+
+        ?></a>
+        </li>
+        
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+</section>
     <section>
         <center><h1>SELL&BUY</h1></center><br>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-8" style="background-color: white;border-radius: 15px 15px 15px 15px;">
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade" style="border-radius: 30px 30px 30px 30px;">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="intel2.png" class="rounded" style="width: 600px; display: block;height: 250px; margin: 0 auto;">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="cpu2.png" class="rounded" alt="Ma photo" style="width: 800px; display: block;height: 200px; margin: 0 auto;">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="brand.png" alt="Ma photo" style="width: 800px; display: block;height: 200px; margin: 0 auto;">
-                          </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
-                      <span><br></span>
-                      <div class="product-disc">
-                        <div class="row">
-                          <div class="col-md-8">
-                             <h1>Processeur intel i7 9900k</h1>
-                             <p>Processeur neuf jamais utilisé <br>ville : oujda </p>
-                  
-                        </div>
-                        <div class="col-md-2 ml-auto">
-                          <p style="color:rgb(46, 107, 255);font-size: 25px;"><b>150 $</b></p>
-                        </div>
-                      </div>
-
-                   
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-4">
-                    VENDEUR_NAME
-                      Numero:0691318189
-                  </div>
-                  <div class="col-md-4 ml-auto">
-                    <p>contactez le vendeur :</p>
-                    <a href=""><button class="btn btn-success" style="margin-bottom: 5px;">appel</button></a>
-                    <a href="https://mail.google.com/"><button class="btn btn-dark"style="margin-bottom: 5px;">E-Mail</button></a>
-                  </div>
-                </div>
-                
-              </div>
-
-
-                <div class="col-md-3">
-                  <div class="col-sm-2">
-                    <h1><center>Suggestions</center></h1>
-        <a href="" class="btn text-dark btn-transparant">
-         <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-secondary border-success"><b>CPU i7-9700K</b></div>
-  <div class="card-body text-dark">
-    <img src="cpu2.png" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
-  </div>
-  <div class="card-footer bg-light border-dark"><b>150$</b></div>
-</div>
-       </a></div>
-                </div>
-
-             </div>
-        </div>
+        <?php  include ('../interprod.php'); ?>
         </section>
 <section>
   <h1><center><b>NEW OFFER</b></center></h1>
-  <div class="row";>
+  <div class="row";><div class="col-sm-1"></div>
+    <?php 
+    $getnewoffre=mysqli_query($conn,"SELECT * FROM produit WHERE idCat='{$produit['idCat']}' limit 4");
+    while($new=mysqli_fetch_assoc($getnewoffre)) {
+     ?>
 
-      <div class="col-sm-1"></div>
+      
        <div class="col-sm-2">
-        <a href="product.html" class="btn text-light btn-transparant">
+        <?php 
+        echo '<a href="./index.php?idProduit='.$new['idProduit'].'" class="btn text-light btn-transparant">'; ?>
          <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-secondary border-success"><b>CPU i7-9700K</b></div>
+  <div class="card-header bg-secondary border-success"><b><?php echo $new['nom']; ?></b></div>
   <div class="card-body text-success">
-    <img src="cpu2.png" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
+    <img src="<?php echo './'.$new['img']; ?>" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
   </div>
-  <div class="card-footer bg-secondary border-success"><b>150$</b></div>
+  <div class="card-footer bg-secondary border-success"><b><?php echo $new['prix'].'DH'; ?></b></div>
 </div>
        </a></div>
-
-
- <div class="col-sm-2">
-        <a href="" class="btn text-light btn-transparant">
-         <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-secondary border-success"><b>CPU i7-9700K</b></div>
-  <div class="card-body text-success">
-    <img src="cpu2.png" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
-  </div>
-  <div class="card-footer bg-secondary border-success"><b>150$</b></div>
-</div></a>
-       </div>
-
-        <div class="col-sm-2">
-        <a href="" class="btn text-light btn-transparant">
-         <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-secondary border-success"><b>CPU i7-9700K</b></div>
-  <div class="card-body text-success">
-    <img src="cpu2.png" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
-  </div>
-  <div class="card-footer bg-secondary border-success"><b>150$</b></div>
-</div></a>
-       </div>
-
-      <div class="col-sm-2">
-        <a href="" class="btn text-light btn-transparant">
-         <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-secondary border-success"><b>CPU i7-9700K</b></div>
-  <div class="card-body text-success">
-    <img src="cpu2.png" style="width: 150px; display: block;height: 150px; margin: 0 auto";>
-  </div>
-  <div class="card-footer bg-secondary border-success"><b>150$</b></div>
-</div></a>
-       </div>
+     <?php } ?>
      </div>
 </section>
 <section>

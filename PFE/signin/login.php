@@ -21,18 +21,26 @@ if(isset($_POST['email'])){
         $count = mysqli_num_rows($run_user);
         
         if($count==1){
+          $row=mysqli_fetch_array($run_user);
             
-            $_SESSION['email']=$email;
-           $_SESSION['nom']=$nom;
+          $_SESSION['email']=$email;
+           $_SESSION['prenom']=$row['prenom'];
+           $_SESSION['idUser']=$row['idUser'];
+           $_SESSION['nom']=$row['nom'];
+           $_SESSION['adress']=$row['adress'];
+           $_SESSION['tel']=$row['tel'];
+           $_SESSION['password']=$pass;
+
             
             header("location:../interfaceconnecte/index.php");
             
-        }else{
+        }
+
+          }}else{
             
             header("location:index.php?error=incorrect username or password");
             
         }
         
-    }
-  }
+  
     ?>

@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include '../db_conn.php';
  ?>
 <!DOCTYPE html>
@@ -39,7 +40,16 @@ include '../db_conn.php';
         </li>
         <li class="nav-item">
           
-          <a class="nav-link disabled" href=""><i class="fas fa-user-alt"></i> Vendeur Id</a>
+          <a class="nav-link disabled" href=""><i class="fas fa-user-alt"></i> <?php 
+          if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
+            echo $_SESSION['nom'].' '.$_SESSION['prenom'];
+          }else{
+            header("location:../signin/index.php");
+          }
+        
+
+
+        ?></a>
         </li>
       </ul>
     </div>
