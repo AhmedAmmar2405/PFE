@@ -22,13 +22,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-          <a class="nav-link active" href="./index.php">home</a>
+          <a class="nav-link" href="./index.php">home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Gerer vendeur</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Gerer Categories&Produits</a>
+          <a class="nav-link" href="./gerercat.php">Gerer Categories&Produits</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="">Demande deposition : <?php include "../db_conn.php";
@@ -47,7 +47,7 @@ echo '('.$count.')'; ?></a>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-4"></div>
-			<div class="col-md-4"> <h1><center>DEMMANDES : </center></h1>
+			<div class="col-md-4"> <h1><center><u>DEMANDES :</u> </center></h1>
 			</div></div>
 	<span><br><br><br></span>
   <?php 

@@ -25,7 +25,7 @@
           <a class="nav-link active" href="./index.php">home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Gerer vendeur</a>
+          <a class="nav-link" href="./gerercat.php">Gerer vendeur</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Gerer Categories&Produits</a>

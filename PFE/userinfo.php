@@ -23,13 +23,13 @@ echo '<section>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="./index.php">Home</a>
+          <a class="nav-link" href="./interface/index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../addproduct/index.php" style="background:green;border-radius: 30px 30px 30px 30px;"><i class="fas fa-plus"></i> Vendre produit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="logout.php">Logout</a>
+          <a class="nav-link" href="./interfaceconnecte/logout.php">Logout</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="./userinfo.php"><i class="fas fa-user-alt"></i> ';
